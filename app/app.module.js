@@ -7,7 +7,7 @@
       'ui.router',
       'myApp.view1',
       'myApp.view2',
-      'myApp.version'
+      'myApp.components'
     ]);
 
 })();

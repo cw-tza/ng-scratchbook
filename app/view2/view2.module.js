@@ -4,7 +4,8 @@
 
   angular
     .module('myApp.view2', [
-      'ui.router'
+      'ui.router',
+      'myApp.components'
     ]);
 
 })();

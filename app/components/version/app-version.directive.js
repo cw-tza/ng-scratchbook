@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('myApp.version')
+    .module('myApp.components')
     .directive('appVersion', appVersion);
 
   appVersion.$inject = ['version'];

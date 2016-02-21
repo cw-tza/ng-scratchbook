@@ -6,26 +6,38 @@
     .module('myApp.view1')
     .controller('View1Ctrl', View1Ctrl);
 
-  View1Ctrl.$inject = ['$scope'];
+  View1Ctrl.$inject = ['$scope', 'view1Service'];
 
-  function View1Ctrl($scope) {
+  function View1Ctrl($scope, view1Service) {
 
     var vm = this;
 
-    vm.foo   = 'bar';
     vm.model = {};
 
     vm.isValid = isValid;
     vm.submit  = submit;
 
-    function submit() {
-
-      console.log('saving', vm.model);
+    function isValid() {
+      return $scope.view1Form.$valid;
     }
 
-    function isValid() {
+    function submit(valid) {
 
-      return $scope.view1Form.$valid;
+      if (valid) {
+        view1Service.saveModel(vm.model)
+                    .then(onSaveSuccessful)
+                    .catch(onSaveFailed);
+      } else {
+        throw 'invalid';
+      }
+
+      function onSaveSuccessful(data) {
+        console.log('success', data);
+      }
+
+      function onSaveFailed(reason) {
+        console.log('failure', reason);
+      }
     }
   }
 })();

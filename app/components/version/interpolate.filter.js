@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('myApp.version')
+    .module('myApp.components')
     .filter('interpolate', interpolateFilter);
 
   interpolateFilter.$inject = ['version'];
