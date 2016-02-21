@@ -6,7 +6,9 @@
       .controller('View1Ctrl', View1Ctrl);
 
   function View1Ctrl() {
-    var vm = this;
-  }
 
+    var vm = this;
+
+    vm.foo = 'bar';
+  }
 })();

@@ -19,7 +19,7 @@ gulp.task('templates', templatesTask);
 gulp.task('scripts', scriptsTask);
 gulp.task('styles', stylesTask);
 gulp.task('build', buildTask);
-gulp.task('dev', devTask);
+gulp.task('dev', ['build'], devTask);
 gulp.task('default', ['build']);
 
 function cleanTask() {
