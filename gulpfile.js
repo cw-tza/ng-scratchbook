@@ -44,18 +44,18 @@ function scriptsTask() {
              .pipe(jscs.reporter())
              .pipe(gulpIf(!devMode, jscs.reporter('fail')))
              .pipe(order(config.scripts.concatOrder, {base: '.'}))
-             .pipe(mapConcat(config.dest.concat, {sourcesContent: true}))
+             .pipe(mapConcat(config.dest.scripts, {sourcesContent: true}))
              .pipe(gulp.dest(config.dest.dir));
 }
 
 function stylesTask() {
 
   return merge(
-      gulp.src(config.styles.css)
-          .pipe(gulp.dest(config.dest.dir)),
-      gulp.src(config.styles.sass)
-          .pipe(sass().on('error', sass.logError))
-          .pipe(gulp.dest(config.dest.dir)));
+    gulp.src(config.styles.css),
+    gulp.src(config.styles.sass)
+        .pipe(sass().on('error', sass.logError)))
+    .pipe(mapConcat(config.dest.styles))
+    .pipe(gulp.dest(config.dest.dir));
 }
 
 function buildTask(callback) {

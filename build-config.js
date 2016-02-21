@@ -2,9 +2,10 @@
 
 module.exports = {
   dest:      {
-    dir:    'dest',
-    files:  'dest/**',
-    concat: 'app.js'
+    dir:     'dest',
+    files:   'dest/**',
+    scripts: 'app.js',
+    styles:  'app.css'
   },
   templates: {
     files:      'app/**/*.html',
