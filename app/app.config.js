@@ -1,13 +1,15 @@
 (function () {
+
   'use strict';
 
-  angular.module('myApp')
-         .config(appConfig);
+  angular
+    .module('myApp')
+    .config(appConfig);
 
-  appConfig.$inject = ['$routeProvider'];
+  appConfig.$inject = ['$urlRouterProvider'];
 
-  function appConfig($routeProvider) {
-    $routeProvider.otherwise({redirectTo: '/view1'});
+  function appConfig($urlRouterProvider) {
+
+    $urlRouterProvider.otherwise('/state1');
   }
-
 })();
