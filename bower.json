@@ -1,7 +1,7 @@
 {
   "name": "ng-scratchbook",
   "version": "0.0.0",
-  "homepage": "https://github.com/waxxfetish/tza-gulp",
+  "homepage": "https://github.com/waxxfetish/ng-scratchbook",
   "private": true,
   "dependencies": {
     "angular": "~1.5",

@@ -1,6 +1,10 @@
 {
   "name": "ng-scratchbook",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waxxfetish/ng-scratchbook.git"
+  },
   "devDependencies": {
     "bower": "^1.7.7",
     "del": "^2.2.0",
