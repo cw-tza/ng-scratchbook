@@ -4,7 +4,7 @@ module.exports = {
   dest:      {
     dir:    'dest',
     files:  'dest/**',
-    concat: 'app-out.js'
+    concat: 'app.js'
   },
   templates: {
     files:      'app/**/*.html',
@@ -25,9 +25,7 @@ module.exports = {
     files:       'app/**/*.js',
     concatOrder: [
       'app/**/*.module.js',
-      'app/components/**/*.js',
-      'app/view1/**/*.js',
-      'app/view2/**/*.js'
+      'app/**/*.js'
     ]
   },
   styles:    {

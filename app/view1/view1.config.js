@@ -9,7 +9,7 @@
 
   function view1Config($routeProvider) {
     $routeProvider.when('/view1', {
-      templateUrl:  'view1/view1.html',
+      templateUrl:  'view1/view1.template.html',
       controller:   'View1Ctrl',
       controllerAs: 'vm'
     });
