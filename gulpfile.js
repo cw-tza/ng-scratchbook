@@ -63,23 +63,30 @@ function stylesTask() {
 
 function buildTask(callback) {
 
-  runSequence('clean', [
-    'scripts',
-    'templates',
-    'styles'
-  ], callback);
+  runSequence('clean',
+              'test', [
+                'scripts',
+                'templates',
+                'styles'
+              ], callback);
 }
 
-function devTask() {
+function testTask(callback) {
+
+  startKarma(callback);
+}
+
+function devTask(callback) {
 
   devMode = true;
   gulp.watch(config.scripts.files, ['scripts']);
   gulp.watch(config.templates.files, ['templates']);
   gulp.watch([config.styles.css, config.styles.sass], ['styles']);
+  startKarma(callback);
 }
 
-function testTask(done) {
+function startKarma(callback) {
 
-  new KarmaServer(config.karma.server, done)
+  new KarmaServer(config.karma(devMode), callback)
     .start();
 }

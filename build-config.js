@@ -33,10 +33,12 @@ module.exports = {
     sass: 'app/**/*.scss',
     css:  'app/**/*.css'
   },
-  karma:     {
-    server: {
-      configFile: __dirname + '/test/karma.conf.js',
-      singleRun:  false
-    }
-  }
+  karma:     karmaServerOpts
 };
+
+function karmaServerOpts(devMode) {
+  return {
+    configFile: __dirname + '/test/karma.conf.js',
+    singleRun:  !devMode
+  }
+}
