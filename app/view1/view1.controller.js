@@ -27,6 +27,5 @@
 
       return $scope.view1Form.$valid;
     }
-
   }
 })();

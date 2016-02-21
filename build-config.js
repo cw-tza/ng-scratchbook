@@ -32,5 +32,11 @@ module.exports = {
   styles:    {
     sass: 'app/**/*.scss',
     css:  'app/**/*.css'
+  },
+  karma:     {
+    server: {
+      configFile: __dirname + '/test/karma.conf.js',
+      singleRun:  false
+    }
   }
 };

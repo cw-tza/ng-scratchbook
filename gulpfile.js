@@ -9,9 +9,11 @@ var gulp        = require('gulp'),
     jsHint      = require('gulp-jshint'),
     jscs        = require('gulp-jscs'),
     merge       = require('merge-stream'),
-    del         = require('del'),
     runSequence = require('run-sequence'),
+    karma       = require('karma'),
+    del         = require('del'),
     config      = require('./build-config'),
+    KarmaServer = karma.Server,
     devMode     = false;
 
 gulp.task('clean', cleanTask);
@@ -19,6 +21,7 @@ gulp.task('templates', templatesTask);
 gulp.task('scripts', scriptsTask);
 gulp.task('styles', stylesTask);
 gulp.task('build', buildTask);
+gulp.task('test', testTask);
 gulp.task('dev', ['build'], devTask);
 gulp.task('default', ['build']);
 
@@ -73,4 +76,10 @@ function devTask() {
   gulp.watch(config.scripts.files, ['scripts']);
   gulp.watch(config.templates.files, ['templates']);
   gulp.watch([config.styles.css, config.styles.sass], ['styles']);
+}
+
+function testTask(done) {
+
+  new KarmaServer(config.karma.server, done)
+    .start();
 }

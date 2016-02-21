@@ -4,9 +4,9 @@
   "homepage": "https://github.com/waxxfetish/ng-scratchbook",
   "private": true,
   "dependencies": {
-    "angular": "~1.5",
-    "angular-loader": "~1.5",
-    "angular-mocks": "~1.5",
+    "angular": "~1.5.0",
+    "angular-loader": "~1.5.0",
+    "angular-mocks": "~1.5.0",
     "angular-ui-router": "~0.2.18",
     "html5-boilerplate": "~5.2.0"
   }
